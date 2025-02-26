@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Luv 🎂❤️</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe4e1;
+            color: #333;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 30px;
+            color: #ff1493;
+        }
+        .question {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        .image-container {
+            margin: 20px 0;
+        }
+        .image-container img {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #yesBtn {
+            background-color: #ff69b4;
+            color: white;
+        }
+        #yesBtn:hover {
+            background-color: #ff1493;
+        }
+        #noBtn {
+            background-color: #ddd;
+        }
+        #noBtn:hover {
+            background-color: #bbb;
+        }
+        #ticket {
+            display: none;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Happy Birthday My Luv 🎂❤️</h1>
+    <p class="question">Handa ka na ba sa surpresa ko? 🥰</p>
+
+    <div class="image-container">
+        <img id="questionImage" src="https://i.giphy.com/media/l4KhQo2MESJkc6QbS/giphy.webp" alt="Birthday GIF">
+    </div>
+
+    <div class="buttons">
+        <button id="yesBtn">Yes! 🎂💖</button>
+        <button id="noBtn">No 😢</button>
+    </div>
+
+    <div id="ticket">
+        <h2>Yay! 🎉 Message me for your flight ticket for June! ✈️💑</h2>
+    </div>
+
+    <script>
+        const questions = [
+            { text: "Handa ka na ba sa surprise ko? (spoiler: kahit humindi ka nakahanda parin ako hehe:3🥰", img: "https://i.giphy.com/media/l4KhQo2MESJkc6QbS/giphy.webp" },
+            { text: "Happy 22nd Birthday, Love! Anong birthday wish mo? 🎂🎉", img: "https://i.giphy.com/media/xT9IgG50Fb7Mi0prBC/giphy.webp" },
+            { text: "Mahal mo ba ako kahit ang kulit ko? 🥰", img: "https://i.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.webp" },
+            { text: "Di ka ba magsasawa sa mga jokes at asar ko kahit alam nating pikunin ka? 😂", img: "https://i.giphy.com/media/26AHONQ79FdWZhAI0/giphy.webp" },
+            { text: "Alam mo ba na ikaw ang pinaka-cute na 22-year-old sa mundo? (SPOILER: Oo, kasi bonsai ka 😘)", img: "https://i.giphy.com/media/xT9DPpf0zTqRASyzTi/giphy.webp" },
+            { text: "Pwede ba kitang yakapin ng mahigpit sa June? 🤗💖", img: "https://i.giphy.com/media/3o6Zt481isNVuQI1l6/giphy.webp" },
+            { text: "Ano gusto mong gawin muna natin pag nagkita tayo? Date o yakap agad? hehe:3 🥰", img: "https://i.giphy.com/media/l1J9FqACW1b0ST6Ok/giphy.webp" },
+            { text: "Alam mo bang sobrang excited ako makita ka? 🥹", img: "https://i.giphy.com/media/l2JehQ2GitHGdVG9y/giphy.webp" },
+            { text: "One last thing… Ready ka na ba sa big adventure natin? ✈️💑", img: "https://i.giphy.com/media/3ohhwp0HA2EJftKFaw/giphy.webp" }
+        ];
+
+        let questionIndex = 0;
+        const questionElement = document.querySelector(".question");
+        const questionImage = document.getElementById("questionImage");
+        const yesBtn = document.getElementById("yesBtn");
+        const noBtn = document.getElementById("noBtn");
+        const buttonsDiv = document.querySelector(".buttons");
+        const ticketDiv = document.getElementById("ticket");
+
+        yesBtn.addEventListener("click", function() {
+            questionIndex++;
+            if (questionIndex < questions.length) {
+                questionElement.innerText = questions[questionIndex].text;
+                questionImage.src = questions[questionIndex].img;
+            } else {
+                questionElement.innerText = "Yay! I can’t wait to spend forever with you! ❤️";
+                questionImage.src = "https://i.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.webp";
+                buttonsDiv.style.display = "none";
+                ticketDiv.style.display = "block";
+            }
+        });
+
+        noBtn.addEventListener("click", function() {
+            alert("Wait, isipin mo ulit! Birthday mo to, dapat happy ka! 🎂🥺💕");
+        });
+    </script>
+
+</body>
+</html>
